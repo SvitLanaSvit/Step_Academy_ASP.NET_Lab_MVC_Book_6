@@ -10,14 +10,14 @@
             border: 1px solid none;
         }
         .wrapper{
-            min-width: 1200px;
             margin: 20px auto;
-            display: flex;
             justify-content: space-between;
         }
         .container{
             display: flex;
             flex-direction: row;
+            width: 610px;
+            margin-bottom: 20px;
         }
         .card{
             display: flex;
@@ -40,7 +40,12 @@
             width: 150px;
         }
         .btn{
-            width: 350px;
+            width: 100px;
+        }
+        #add{
+            position: fixed;
+            left: 100px;
+            bottom: 96px;
         }
     </style>
 }
@@ -54,7 +59,7 @@
                 <div class="info">
                     <table>
                         <tr>
-                            <th>Name</th>
+                            <th>Title</th>
                             <td>@item.Name</td>
                         </tr>
                         <tr>
@@ -76,7 +81,10 @@
                     </table>
                 </div>
                 <div>
-                    <a href="/Home/Details/@item.Id" class="btn btn-primary">More info by @item.Name</a>
+                    @*<a href="/Home/Details/@item.Id" class="btn btn-primary">More info by @item.Name</a>*@
+                    <a asp-action="details" asp-route-id="@item.Id" class="btn btn-primary">Details</a>
+                    <a asp-action="edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
                 </div>
             </div>
             <div class="image">
@@ -84,4 +92,5 @@
             </div> 
         </div>
     }
+    <a asp-action="create" class="btn btn-info" id="add">Add book</a>
 </div>

@@ -1,7 +1,10 @@
+using Lab_MVC_Book_6.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<IRepository<Book>, BookRepository>();
 
 var app = builder.Build();
 

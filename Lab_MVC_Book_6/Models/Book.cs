@@ -9,5 +9,6 @@
         public string Publishing { get; set; } = null!;
         public int YearOfPublishing { get; set; }
         public string FilePath { get; set; } = null!;
+        public string AboutBook { get; set; } = null!;
     }
 }
